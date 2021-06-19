@@ -60,7 +60,7 @@ int main()
 	  //path = "/home/utnso/Desktop/TP-SO/tp-2021-1c-GrupoChicasSistOp2021/SuperBloque.ims";
 	  path = "testing.ims";
 
-	  fd = open(path, O_RDWR | O_CREAT | O_TRUNC);
+	  fd = open(path, O_RDWR | O_CREAT | O_TRUNC, 0777); // el ultimo parametro son permisos
 	  if (fd < 0)
 	  {
 	      printf("fallo abrir/crear el archivo");
