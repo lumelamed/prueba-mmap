@@ -94,7 +94,7 @@ void escrbirblock(int bloque, char caracter, int posicion){
 
 int main(){
 
-	char* path= "/home/utnso/workspace/Prueba/ejemplo";
+	char* path= "/home/utnso/prueba-mmap/ejemplo";
 
 	create_file_with_size(path, tam_clusters * cant_clauster);
 
@@ -107,7 +107,7 @@ int main(){
 
 	}
 
-//hola
+
 	for(int i =0 ; i < 5; i ++){    //------------------> ir escribirendo revisando si me quede sin espacio
 
 		escrbirblock(1,'J',i);

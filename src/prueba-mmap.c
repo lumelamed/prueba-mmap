@@ -1,10 +1,4 @@
 /*
- * pruebita-mmap.c
- *
- *  Created on: Jun 6, 2021
- *      Author: utnso
- */
-
 #include <sys/mman.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -28,7 +22,7 @@ int main()
 	  for(int i = 0; i < cantidad_clusters; i++){
 		  bitmap[i]= 0; //inicializo en 0
 	  }*/
-
+/*
 	  char* cant_clusters = string_itoa(cantidad_clusters);
 	  char* taman_cluster = string_itoa(tam_cluster);
 	  char* bitmapChar =  string_new();
@@ -77,14 +71,14 @@ int main()
 	  ftruncate(fd, tamContenido);
 	  // en stack overflow lei esto:
 
-	  /*When you create the destination file as a new file, its size is 0 bytes.
-	   * memcpy crashes because it tries to write data beyond the end of the file.
-	You can make this work by pre-sizing the destination file to the size of the source file (using ftruncate()) before you mmap() it*/
+	  //When you create the destination file as a new file, its size is 0 bytes.
+	   //memcpy crashes because it tries to write data beyond the end of the file.
+	//You can make this work by pre-sizing the destination file to the size of the source file (using ftruncate()) before you mmap() it
 
-	  addr = mmap(NULL, tamContenido, PROT_WRITE, MAP_SHARED, fd, 0); /* map file  */
+	  addr = mmap(NULL, tamContenido, PROT_WRITE, MAP_SHARED, fd, 0); // map file
 
 
-	  if(addr == MAP_FAILED) /* check mapping successful */
+	  if(addr == MAP_FAILED) // check mapping successful
 	  {
 		perror("Error  mapping \n");
 		exit(1);
@@ -93,7 +87,7 @@ int main()
 
 	memcpy(addr, todoElContenidoDelArchivo, tamContenido);
 
-	//printf("\nfile contents after:\n%s \n", addr); /* write file contents after modification */
+	//printf("\nfile contents after:\n%s \n", addr); // write file contents after modification
 
 	msync(fd, tamContenido, MS_SYNC); // entiendo que como que persiste en el archivo lo que cambiamos,
 	// pero no termine de entender (la consigna decia que investiguemos msync)
@@ -137,3 +131,4 @@ int main()
 
 	return 0;
 }
+*/
